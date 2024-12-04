@@ -4,7 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!</title>
-    <link rel="stylesheet" href="style.css">
+    <styles>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f7d7e8, #ffbbcc);
+    font-family: 'Arial', sans-serif;
+}
+
+.cake {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tier {
+    position: relative;
+    background-color: #ff88aa;
+    border: 3px solid #d47c93;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tier1 {
+    width: 300px;
+    height: 60px;
+}
+
+.tier2 {
+    width: 220px;
+    height: 50px;
+}
+
+.tier3 {
+    width: 150px;
+    height: 40px;
+}
+
+.candles {
+    position: absolute;
+    top: -70px;
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.candle {
+    position: relative;
+    width: 15px;
+    height: 50px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    animation: flicker 1.2s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+    </styles>
 </head>
 <body>
     <div class="cake">
