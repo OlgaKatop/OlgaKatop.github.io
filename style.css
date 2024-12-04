@@ -49,12 +49,12 @@ body {
     top: -50px;
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 110px;
 }
 
 .candle {
     position: relative;
-    width: 8px;
+    width: 12px;
     height: 50px;
     background-color: #fff;
     border: 2px solid #ddd;
