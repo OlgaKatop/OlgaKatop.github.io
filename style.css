@@ -1,3 +1,4 @@
+/* General styling */
 body {
     margin: 0;
     padding: 0;
@@ -6,67 +7,80 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #f7d7e8, #ffbbcc);
+    background: linear-gradient(to bottom, #f7c2d0, #fef6e4);
     font-family: 'Arial', sans-serif;
+    text-align: center;
 }
 
+h1.message {
+    font-size: 2.5rem;
+    color: #ff0080;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Cake styling */
 .cake {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
 }
 
+/* Tier styles */
 .tier {
     position: relative;
-    background-color: #ff88aa;
-    border: 3px solid #d47c93;
-    border-radius: 10px;
-    margin: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, #ffcccb, #ff9999);
+    border: 4px solid #d46a6a;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.tier1 {
+.base {
     width: 300px;
-    height: 60px;
+    height: 100px;
+    margin-top: 20px;
 }
 
-.tier2 {
+.middle {
     width: 220px;
-    height: 50px;
+    height: 80px;
+    margin-top: -40px; /* Overlap */
 }
 
-.tier3 {
+.top {
     width: 150px;
-    height: 40px;
+    height: 60px;
+    margin-top: -30px; /* Overlap */
 }
 
+/* Candle styles */
 .candles {
     position: absolute;
-    top: -70px;
+    top: -90px;
     display: flex;
-    justify-content: space-between;
-    width: 150px;
+    gap: 20px;
 }
 
 .candle {
     position: relative;
     width: 15px;
-    height: 50px;
-    background-color: #fff;
+    height: 60px;
+    background: #fff;
     border: 2px solid #ddd;
     border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .candle::before {
-    content: "";
+    content: '';
     position: absolute;
-    top: -10px;
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
     width: 10px;
     height: 10px;
-    background-color: #ffcc00;
+    background: radial-gradient(circle, #ffcc00, #ff9900);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
     animation: flicker 1.2s infinite;
@@ -74,22 +88,11 @@ body {
 
 @keyframes flicker {
     0%, 100% {
-        opacity: 1;
         transform: translateX(-50%) scale(1);
+        opacity: 1;
     }
     50% {
-        opacity: 0.8;
         transform: translateX(-50%) scale(1.2);
+        opacity: 0.8;
     }
-}
-
-.message {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.message h1 {
-    font-size: 2.5rem;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
