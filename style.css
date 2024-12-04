@@ -29,21 +29,24 @@ body {
 .tier1 {
     width: 300px;
     height: 60px;
+    margin: 0px
 }
 
 .tier2 {
     width: 220px;
     height: 50px;
+    margin: 0px
 }
 
 .tier3 {
     width: 150px;
     height: 40px;
+    margin: 0px
 }
 
 .candles {
     position: absolute;
-    top: -70px;
+    top: -50px;
     display: flex;
     justify-content: space-between;
     width: 150px;
