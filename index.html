@@ -1,67 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday!</title>
-  <style>
-    .cake {
-      width: 200px;
-      height: 200px;
-      background-color: pink;
-      position: relative;
-      border-radius: 10px;
-      margin: 50px auto;
-      text-align: center;
-    }
-
-    .candle {
-      width: 10px;
-      height: 50px;
-      background-color: yellow;
-      position: absolute;
-      top: -50px;
-    }
-
-    .candle:nth-child(1) { left: 30px; }
-    .candle:nth-child(2) { left: 80px; }
-    .candle:nth-child(3) { left: 130px; }
-
-    .flame {
-      width: 10px;
-      height: 20px;
-      background-color: orange;
-      border-radius: 50%;
-      position: absolute;
-      top: -20px;
-      left: 0;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Happy Birthday!</h1>
-  <div class="cake">
-    <div class="candle" onclick="blowOut(this)">
-      <div class="flame"></div>
+    <div class="cake">
+        <div class="tier tier1"></div>
+        <div class="tier tier2"></div>
+        <div class="tier tier3"></div>
+        <div class="candles">
+            <div class="candle"></div>
+            <div class="candle"></div>
+            <div class="candle"></div>
+            <div class="candle"></div>
+            <div class="candle"></div>
+        </div>
     </div>
-    <div class="candle" onclick="blowOut(this)">
-      <div class="flame"></div>
+    <div class="message">
+        <h1>Happy Birthday!</h1>
     </div>
-    <div class="candle" onclick="blowOut(this)">
-      <div class="flame"></div>
-    </div>
-  </div>
-
-  <script>
-    function blowOut(candle) {
-      const flame = candle.querySelector('.flame');
-      flame.classList.add('hidden');
-      // Optional: Check if all candles are out and show a message!
-    }
-  </script>
 </body>
 </html>
