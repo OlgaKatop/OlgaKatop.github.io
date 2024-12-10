@@ -1,0 +1,1672 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #e1aeae, #9a3030);
+    font-family: 'Arial', sans-serif;
+}
+
+.cake {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Candles */
+.candles {
+    position: absolute;
+    top: -40px; /* Adjust this value so the candles are placed above the top tier */
+    display: flex;
+    justify-content: space-between;
+    width: 110px;
+    z-index: 6; /* Ensure candles are on top of the tiers */
+}
+
+/* Add this section to place the sprinkles on top of the white icing */
+.sprinkles {
+    position: absolute;
+    top: -6px; /* Adjust this value so the sprinkles are placed correctly on the white icing */
+    left: 0;
+    right: 0;
+    width: 100%; /* Cover the width of the top tier */
+    z-index: 5; /* Ensure the sprinkles are on top of the icing */
+    pointer-events: none; /* Ensure sprinkles don’t interfere with other interactive elements */
+}
+
+/* Style for individual sprinkles */
+.sprinkle {
+    width: 8px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #ff0000; /* Default color (red), will change per sprinkle */
+    position: relative;
+    transform: rotate(var(--rotate)); /* Apply rotation based on the --rotate custom property */
+}
+
+/* Randomize colors and angles for different sprinkles */
+.sprinkle:nth-child(1) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: 77%;  /* Random vertical position */
+    left: 46%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(2) {
+    background-color: #19b919; /* Green */
+    --rotate: -30deg; /* Rotate by -30 degrees */
+    top: 50%; /* Random vertical position */
+    left: 35%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(3) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: 65%; /* Random vertical position */
+    left: 68%; /* Random horizontal position */
+}
+.sprinkle:nth-child(4) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 5deg; /* Rotate by 5 degrees */
+    top: 65%; /* Random vertical position */
+    left: 65%; /* Random horizontal position */
+}
+.sprinkle:nth-child(5) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -20deg; /* Rotate by -25 degrees */
+    top: 80%; /* Random vertical position */
+    left: 52%; /* Random horizontal position */
+}
+.sprinkle:nth-child(6) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: 30%;  /* Random vertical position */
+    left: 36%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(7) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: 48%;  /* Random vertical position */
+    left: 65%; /* Random horizontal position */
+}
+.sprinkle:nth-child(8) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: 60%; /* Random vertical position */
+    left: 63%; /* Random horizontal position */
+}
+.sprinkle:nth-child(9) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: 35%; /* Random vertical position */
+    left: 35%; /* Random horizontal position */
+}
+.sprinkle:nth-child(10) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 9deg; /* Rotate by 5 degrees */
+    top: 75%; /* Random vertical position */
+    left: 45%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(11) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -23deg; /* Rotate by -25 degrees */
+    top: 80%; /* Random vertical position */
+    left: 47%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(12) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: 78%;  /* Random vertical position */
+    left: 56%; /* Random horizontal position */
+}
+.sprinkle:nth-child(13) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -17deg; /* Rotate by 15 degrees */
+    top: 58%; /* Random vertical position */
+    left: 60%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(14) {
+    background-color: #ff0000; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: 40%;  /* Random vertical position */
+    left: 64%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(15) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: 45%; /* Random vertical position */
+    left: 40%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(16) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: 67%;  /* Random vertical position */
+    left: 36%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(17) {
+    background-color: #19b919; /* Green */
+    --rotate: 20deg; /* Rotate by -30 degrees */
+    top: -15px; /* Random vertical position */
+    left: 30%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(18) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -3px; /* Random vertical position */
+    left: 58%; /* Random horizontal position */
+}
+.sprinkle:nth-child(19) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 5deg; /* Rotate by 5 degrees */
+    top: -15px; /* Random vertical position */
+    left: 70%; /* Random horizontal position */
+}
+.sprinkle:nth-child(20) {
+    background-color: #0000ff; /* Indigo */
+    --rotate: 17deg; /* Rotate by -25 degrees */
+    top: -9px; /* Random vertical position */
+    left: 47%; /* Random horizontal position */
+}
+.sprinkle:nth-child(21) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -15px;  /* Random vertical position */
+    left: 30%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(22) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -39px;/* Random vertical position */
+    left: 61%; /* Random horizontal position */
+}
+.sprinkle:nth-child(23) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 22deg; /* Rotate by -25 degrees */
+    top: -20px; /* Random vertical position */
+    left: 50%; /* Random horizontal position */
+}
+.sprinkle:nth-child(24) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 18deg; /* Rotate by 15 degrees */
+    top: -20px; /* Random vertical position */
+    left: 35%; /* Random horizontal position */
+}
+.sprinkle:nth-child(25) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -25deg; /* Rotate by 5 degrees */
+    top: -45px; /* Random vertical position */
+    left: 43%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(26) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -20px; /* Random vertical position */
+    left: 44%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(27) {
+    background-color: #19b919; /* Red */
+    --rotate: -30deg; /* Rotate by 20 degrees */
+    top: -20px;  /* Random vertical position */
+    left: 54%; /* Random horizontal position */
+}
+.sprinkle:nth-child(28) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 25deg; /* Rotate by 15 degrees */
+    top: -30px; /* Random vertical position */
+    left: 67%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(29) {
+    background-color: #ff0000; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -40px;  /* Random vertical position */
+    left: 70%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(30) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: -30px; /* Random vertical position */
+    left: 50%; /* Random horizontal position */
+    
+}.sprinkle:nth-child(31) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -37px;  /* Random vertical position */
+    left: 43%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(32) {
+    background-color: #19b919; /* Green */
+    --rotate: 38deg; /* Rotate by -30 degrees */
+    top: -40px; /* Random vertical position */
+    left: 39%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(33) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -66px; /* Random vertical position */
+    left: 55%; /* Random horizontal position */
+}
+.sprinkle:nth-child(34) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 24deg; /* Rotate by 5 degrees */
+    top: -58px; /* Random vertical position */
+    left: 69%; /* Random horizontal position */
+}
+.sprinkle:nth-child(35) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 20deg; /* Rotate by -25 degrees */
+    top: -60px; /* Random vertical position */
+    left: 60%; /* Random horizontal position */
+}
+.sprinkle:nth-child(36) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -55px;  /* Random vertical position */
+    left: 62%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(37) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -53px;  /* Random vertical position */
+    left: 65%; /* Random horizontal position */
+}
+.sprinkle:nth-child(38) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: -53px; /* Random vertical position */
+    left: 63%; /* Random horizontal position */
+}
+.sprinkle:nth-child(39) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: -60px; /* Random vertical position */
+    left: 28%; /* Random horizontal position */
+}
+.sprinkle:nth-child(40) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 9deg; /* Rotate by 5 degrees */
+    top: -69px; /* Random vertical position */
+    left: 55%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(41) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -23deg; /* Rotate by -25 degrees */
+    top: -50px; /* Random vertical position */
+    left: 47%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(42) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -59px;  /* Random vertical position */
+    left: 36%; /* Random horizontal position */
+}
+.sprinkle:nth-child(43) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 17deg; /* Rotate by 15 degrees */
+    top: -67px; /* Random vertical position */
+    left: 59%; /* Random horizontal position */
+}
+.sprinkle:nth-child(44) {
+    background-color: #19b919; /* Red */
+    --rotate: 25deg; /* Rotate by 20 degrees */
+    top: -73px;  /* Random vertical position */
+    left: 69%; /* Random horizontal position */
+}
+.sprinkle:nth-child(45) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: -67px; /* Random vertical position */
+    left: 67%; /* Random horizontal position */
+}
+.sprinkle:nth-child(46) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: -67px; /* Random vertical position */
+    left: 32%; /* Random horizontal position */
+}
+.sprinkle:nth-child(47) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 9deg; /* Rotate by 5 degrees */
+    top: -69px; /* Random vertical position */
+    left: 55%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(48) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -94px; /* Random vertical position */
+    left: 44%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(49) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 20deg; /* Rotate by -25 degrees */
+    top: -100px; /* Random vertical position */
+    left: 51%; /* Random horizontal position */
+}
+.sprinkle:nth-child(50) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -96px;  /* Random vertical position */
+    left: 52%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(51) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -97px;  /* Random vertical position */
+    left: 52%; /* Random horizontal position */
+}
+.sprinkle:nth-child(52) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: -94px; /* Random vertical position */
+    left: 63%; /* Random horizontal position */
+}
+.sprinkle:nth-child(53) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -47deg; /* Rotate by 15 degrees */
+    top: -103px; /* Random vertical position */
+    left: 37%; /* Random horizontal position */
+}
+.sprinkle:nth-child(54) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 9deg; /* Rotate by 5 degrees */
+    top: -100px; /* Random vertical position */
+    left: 45%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(55) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -23deg; /* Rotate by -25 degrees */
+    top: -100px; /* Random vertical position */
+    left: 45%; /* Random horizontal position */
+}
+.sprinkle:nth-child(56) {
+    background-color: #19b919; /* Red */
+    --rotate: 50deg; /* Rotate by 20 degrees */
+    top: -90px;  /* Random vertical position */
+    left: 26%; /* Random horizontal position */
+}
+.sprinkle:nth-child(57) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 25deg; /* Rotate by 15 degrees */
+    top: -100px; /* Random vertical position */
+    left: 27%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(58) {
+    background-color: #ff0000; /* Red */
+    --rotate: 25deg; /* Rotate by 20 degrees */
+    top: -105px;  /* Random vertical position */
+    left: 28%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(59) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: -110px; /* Random vertical position */
+    left: 30%; /* Random horizontal position */
+    
+}.sprinkle:nth-child(60) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -87px;  /* Random vertical position */
+    left: 53%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(61) {
+    background-color: #19b919; /* Green */
+    --rotate: 38deg; /* Rotate by -30 degrees */
+    top: -110px; /* Random vertical position */
+    left: 38%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(62) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -105px; /* Random vertical position */
+    left: 52%; /* Random horizontal position */
+}
+.sprinkle:nth-child(63) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -24deg; /* Rotate by 5 degrees */
+    top: -105px; /* Random vertical position */
+    left: 39%; /* Random horizontal position */
+}
+.sprinkle:nth-child(64) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: -105px; /* Random vertical position */
+    left: 50%; /* Random horizontal position */
+    
+}
+.sprinkle:nth-child(65) {
+    background-color: #19b919; /* Red */
+    --rotate: -30deg; /* Rotate by 20 degrees */
+    top: -109px;  /* Random vertical position */
+    left: 29%; /* Random horizontal position */
+}
+
+.tier {
+    --r: 20px;
+    position: relative;
+    background: 
+        radial-gradient(50% var(--r) at 50% var(--r), #faf7f7 99.99%, #4b2b20 0), /* Top gradient resembling cocoa dusting */
+        radial-gradient(50% var(--r) at 50% calc(100% - var(--r)), #3e241a 99.99%, #4b2b20 0), /* Bottom gradient for depth */
+        #4b2b20; /* Base chocolate color */
+    /*border: 3px solid #3e241a; /* Border for tier definition */
+    border-radius: 100% / calc(var(--r) * 2); /* Rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin-top: -30px; /* Overlap tiers slightly */
+    z-index: auto; /* Ensure proper stacking */
+    overflow: hidden; /* Prevent gradient spillover */
+}
+
+
+/* Sizes for tiers */
+.tier1 {
+    width: 300px;
+    height: 150px;
+    z-index: 1; /* Bottom tier */
+}
+.sprinkle:nth-child(133) {
+    background-color: #19b919; /* Red */
+    --rotate: -30deg; /* Rotate by 20 degrees */
+    top: -24px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 24%; /* Random horizontal position */
+}.sprinkle:nth-child(134) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -24px;  /* Random vertical position */
+    left: 46%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(135) {
+    background-color: #19b919; /* Green */
+    --rotate: 30deg; /* Rotate by -30 degrees */
+    top: -28px; /* Random vertical position */
+    left: 35%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(136) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -29px; /* Random vertical position */
+    left: 68%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(137) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 5deg; /* Rotate by 5 degrees */
+    top: -34px; /* Random vertical position */
+    left: 65%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(138) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -20deg; /* Rotate by -25 degrees */
+    top: -38px; /* Random vertical position */
+    left: 52%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(139) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -34px;  /* Random vertical position */
+    left: 38%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(140) {
+    background-color: #19b919; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -44px;  /* Random vertical position */
+    left: 24%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(141) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 27deg; /* Rotate by -25 degrees */
+    top: -42px; /* Random vertical position */
+    left: 22%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(142) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 25deg; /* Rotate by -25 degrees */
+    top: -40px; /* Random vertical position */
+    left: 42%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(143) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: -54px; /* Random vertical position */
+    left: 18%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(144) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -9deg; /* Rotate by 5 degrees */
+    top: -49px; /* Random vertical position */
+    left: 45%; /* Random horizontal position */    
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(145) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -50px; /* Random vertical position */
+    left: 45%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(146) {
+    background-color: #19b919; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -53px;  /* Random vertical position */
+    left: 56%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(147) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -17deg; /* Rotate by 15 degrees */
+    top: -53px; /* Random vertical position */
+    left: 60%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(148) {
+    background-color: #ff0000; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -57px;  /* Random vertical position */
+    left: 64%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(149) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -34deg; /* Rotate by 5 degrees */
+    top: -59px; /* Random vertical position */
+    left: 17%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(150) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -63px;  /* Random vertical position */
+    left: 30%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(151) {
+    background-color: #19b919; /* Green */
+    --rotate: 20deg; /* Rotate by -30 degrees */
+    top: -59px; /* Random vertical position */
+    left: 31%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(152) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 23deg; /* Rotate by 15 degrees */
+    top: -64px; /* Random vertical position */
+    left: 49%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(153) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 5deg; /* Rotate by 5 degrees */
+    top: -60px; /* Random vertical position */
+    left: 56%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(154) {
+    background-color: #0000ff; /* Indigo */
+    --rotate: -45deg; /* Rotate by -25 degrees */
+    top: -70px; /* Random vertical position */
+    left: 28%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(155) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -75px;  /* Random vertical position */
+    left: 12%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(156) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -67px;/* Random vertical position */
+    left: 61%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(157) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -22deg; /* Rotate by -25 degrees */
+    top: -70px; /* Random vertical position */
+    left: 50%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(158) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -18deg; /* Rotate by 15 degrees */
+    top: -77px; /* Random vertical position */
+    left: 35%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(159) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 25deg; /* Rotate by 5 degrees */
+    top: -79px; /* Random vertical position */
+    left: 40%; /* Random horizontal position */ 
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(160) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -84px; /* Random vertical position */
+    left: 9%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(161) {
+    background-color: #19b919; /* Red */
+    --rotate: 30deg; /* Rotate by 20 degrees */
+    top: -80px;  /* Random vertical position */
+    left: 38%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(162) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -25deg; /* Rotate by 15 degrees */
+    top: -87px; /* Random vertical position */
+    left: 67%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(163) {
+    background-color: #ff0000; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -82px;  /* Random vertical position */
+    left: 53%; /* Random horizontal position */
+    
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(164) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: -90px; /* Random vertical position */
+    left: 14%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(165) {
+    background-color: #ff0000; /* Red */
+    --rotate: 40deg; /* Rotate by 20 degrees */
+    top: -88px;  /* Random vertical position */
+    left: 27%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(166) {
+    background-color: #19b919; /* Green */
+    --rotate: -38deg; /* Rotate by -30 degrees */
+    top: -99px; /* Random vertical position */
+    left: 6%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(167) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -110px; /* Random vertical position */
+    left: 4%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(168) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 24deg; /* Rotate by 5 degrees */
+    top: -120px; /* Random vertical position */
+    left: 87%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(169) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -20deg; /* Rotate by -25 degrees */
+    top: -97px; /* Random vertical position */
+    left: 81%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(170) {
+    background-color: #ff0000; /* Red */
+    --rotate: 27deg; /* Rotate by 20 degrees */
+    top: -106px;  /* Random vertical position */
+    left: 82%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(171) {
+    background-color: #19b919; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -103px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 71%; /* Random horizontal position */
+}
+.sprinkle:nth-child(172) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: -109px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 20%; /* Random horizontal position */
+}
+.sprinkle:nth-child(173) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 28deg; /* Rotate by 15 degrees */
+    top: -106px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 32%; /* Random horizontal position */
+}
+.sprinkle:nth-child(174) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 9deg; /* Rotate by 5 degrees */
+    top: -118px; /* Random vertical position */
+    left: 12%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(175) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -29deg; /* Rotate by -25 degrees */
+    top: -120px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 15%; /* Random horizontal position */
+}
+.sprinkle:nth-child(176) {
+    background-color: #19b919; /* Red */
+    --rotate: 27deg; /* Rotate by 20 degrees */
+    top: -127px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 14%; /* Random horizontal position */
+}
+.sprinkle:nth-child(177) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 17deg; /* Rotate by 15 degrees */
+    top: -123px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 79%; /* Random horizontal position */
+}
+.sprinkle:nth-child(178) {
+    background-color: #19b919; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -123px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 75%; /* Random horizontal position */
+}
+.sprinkle:nth-child(179) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 25deg; /* Rotate by -25 degrees */
+    top: -123px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 73%; /* Random horizontal position */
+}
+.sprinkle:nth-child(180) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: -123px; /* Random vertical position */
+    left: 77%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(181) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -9deg; /* Rotate by 5 degrees */
+    top: -120px; /* Random vertical position */
+    left: 76%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(182) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -139px; /* Random vertical position */
+    left: 89%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(183) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 20deg; /* Rotate by -25 degrees */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    top: -136px; /* Random vertical position */
+    left: 3%; /* Random horizontal position */
+}
+.sprinkle:nth-child(184) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -137px;  /* Random vertical position */
+    left: 4%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(185) {
+    background-color: #19b919; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -150px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 90%; /* Random horizontal position */
+}
+.sprinkle:nth-child(186) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: -137px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 85%; /* Random horizontal position */
+}
+.sprinkle:nth-child(187) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 34deg; /* Rotate by 15 degrees */
+    top: -136px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 81%; /* Random horizontal position */
+}
+.sprinkle:nth-child(188) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -14deg; /* Rotate by 5 degrees */
+    top: -147px; /* Random vertical position */
+    left: 90%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(189) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -145px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 93%; /* Random horizontal position */
+}
+.sprinkle:nth-child(190) {
+    background-color: #19b919; /* Red */
+    --rotate: 50deg; /* Rotate by 20 degrees */
+    top: -145px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 89%; /* Random horizontal position */
+}
+.sprinkle:nth-child(191) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 25deg; /* Rotate by 15 degrees */
+    top: -140px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 20%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(192) {
+    background-color: #ff0000; /* Red */
+    --rotate: 25deg; /* Rotate by 20 degrees */
+    top: -160px;  /* Random vertical position */
+    left: 93%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(193) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: -160px; /* Random vertical position */
+    left: 1%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(194) {
+    background-color: #ff0000; /* Red */
+    --rotate: -29deg; /* Rotate by 20 degrees */
+    top: -168px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 4%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(195) {
+    background-color: #19b919; /* Green */
+    --rotate: -38deg; /* Rotate by -30 degrees */
+    top: -173px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 11%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(196) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -20deg; /* Rotate by 15 degrees */
+    top: -169px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 11%; /* Random horizontal position */
+}
+.sprinkle:nth-child(197) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -52deg; /* Rotate by 5 degrees */
+    top: -165px; /* Random vertical position */
+    left: 9%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(198) {
+    background-color: #8b00ff; /* Yellow */
+    --rotate: 46deg; /* Rotate by 5 degrees */
+    top: -170px; /* Random vertical position */
+    left: 7%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(199) {
+    background-color: #ff0000; /* Red */
+    --rotate: 29deg; /* Rotate by 20 degrees */
+    top: -179px;  /* Random vertical position */
+    left: 8%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(200) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -170px;  /* Random vertical position */
+    left: 96%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(201) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -1780px;  /* Random vertical position */
+    left: 98%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(202) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -27deg; /* Rotate by -25 degrees */
+    top: -175px; /* Random vertical position */
+    left: 87%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(203) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -178px;  /* Random vertical position */
+    left: 83%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(204) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -23deg; /* Rotate by 15 degrees */
+    top: -170px; /* Random vertical position */
+    left: 87%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(205) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 20deg; /* Rotate by 5 degrees */
+    top: -186px; /* Random vertical position */
+    left: 96%; /* Random horizontal position */    
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(206) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -23deg; /* Rotate by -25 degrees */
+    top: -188px; /* Random vertical position */
+    left: 86%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(207) {
+    background-color: #19b919; /* Red */
+    --rotate: 115deg; /* Rotate by 20 degrees */
+    top: -190px;  /* Random vertical position */
+    left: 85%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.tier2 {
+    width: 220px;
+    height: 140px;
+    z-index: 3; /* Middle tier */
+    margin-top: -30px; /* Overlap properly with tier1 */
+    
+}
+.sprinkle:nth-child(66) {
+    background-color: #19b919; /* Red */
+    --rotate: -30deg; /* Rotate by 20 degrees */
+    top: -10px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 24%; /* Random horizontal position */
+}
+.sprinkle:nth-child(67) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -5px;  /* Random vertical position */
+    left: 46%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(68) {
+    background-color: #19b919; /* Green */
+    --rotate: -30deg; /* Rotate by -30 degrees */
+    top: -3px; /* Random vertical position */
+    left: 35%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(69) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -8px; /* Random vertical position */
+    left: 68%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(70) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 5deg; /* Rotate by 5 degrees */
+    top: -8px; /* Random vertical position */
+    left: 65%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(71) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -20deg; /* Rotate by -25 degrees */
+    top: -8px; /* Random vertical position */
+    left: 52%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(72) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -10px;  /* Random vertical position */
+    left: 36%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(74) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -20px;  /* Random vertical position */
+    left: 27%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(73) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 27deg; /* Rotate by -25 degrees */
+    top: -24px; /* Random vertical position */
+    left: 22%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(75) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: -20px; /* Random vertical position */
+    left: 40%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(76) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: -29px; /* Random vertical position */
+    left: 18%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(77) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 9deg; /* Rotate by 5 degrees */
+    top: -20px; /* Random vertical position */
+    left: 45%; /* Random horizontal position */    
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(78) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -23deg; /* Rotate by -25 degrees */
+    top: -24px; /* Random vertical position */
+    left: 47%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(79) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -25px;  /* Random vertical position */
+    left: 56%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(80) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -17deg; /* Rotate by 15 degrees */
+    top: -26px; /* Random vertical position */
+    left: 60%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(81) {
+    background-color: #ff0000; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -34px;  /* Random vertical position */
+    left: 64%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(82) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: -45px; /* Random vertical position */
+    left: 17%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(83) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -35px;  /* Random vertical position */
+    left: 30%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(84) {
+    background-color: #19b919; /* Green */
+    --rotate: 20deg; /* Rotate by -30 degrees */
+    top: -53px; /* Random vertical position */
+    left: 20%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(85) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -42px; /* Random vertical position */
+    left: 58%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(86) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 5deg; /* Rotate by 5 degrees */
+    top: -47px; /* Random vertical position */
+    left: 70%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(87) {
+    background-color: #0000ff; /* Indigo */
+    --rotate: 17deg; /* Rotate by -25 degrees */
+    top: -40px; /* Random vertical position */
+    left: 47%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(88) {
+    background-color: #ff0000; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -49px;  /* Random vertical position */
+    left: 24%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(89) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -45px;/* Random vertical position */
+    left: 61%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(90) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 22deg; /* Rotate by -25 degrees */
+    top: -50px; /* Random vertical position */
+    left: 50%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(91) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 18deg; /* Rotate by 15 degrees */
+    top: -57px; /* Random vertical position */
+    left: 35%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(92) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -25deg; /* Rotate by 5 degrees */
+    top: -49px; /* Random vertical position */
+    left: 42%; /* Random horizontal position */ 
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(93) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -54px; /* Random vertical position */
+    left: 44%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(94) {
+    background-color: #19b919; /* Red */
+    --rotate: -30deg; /* Rotate by 20 degrees */
+    top: -59px;  /* Random vertical position */
+    left: 54%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(95) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 25deg; /* Rotate by 15 degrees */
+    top: -67px; /* Random vertical position */
+    left: 67%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(96) {
+    background-color: #ff0000; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -70px;  /* Random vertical position */
+    left: 70%; /* Random horizontal position */
+    
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(97) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -40deg; /* Rotate by 5 degrees */
+    top: -60px; /* Random vertical position */
+    left: 40%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(98) {
+    background-color: #ff0000; /* Red */
+    --rotate: -40deg; /* Rotate by 20 degrees */
+    top: -67px;  /* Random vertical position */
+    left: 34%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(99) {
+    background-color: #19b919; /* Green */
+    --rotate: 38deg; /* Rotate by -30 degrees */
+    top: -69px; /* Random vertical position */
+    left: 37%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(100) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 15deg; /* Rotate by 15 degrees */
+    top: -66px; /* Random vertical position */
+    left: 55%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(101) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 24deg; /* Rotate by 5 degrees */
+    top: -88px; /* Random vertical position */
+    left: 80%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(102) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -20deg; /* Rotate by -25 degrees */
+    top: -80px; /* Random vertical position */
+    left: 80%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(103) {
+    background-color: #ff0000; /* Red */
+    --rotate: 27deg; /* Rotate by 20 degrees */
+    top: -85px;  /* Random vertical position */
+    left: 82%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(104) {
+    background-color: #19b919; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -83px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 71%; /* Random horizontal position */
+}
+.sprinkle:nth-child(105) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -25deg; /* Rotate by -25 degrees */
+    top: -102px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 17%; /* Random horizontal position */
+}
+.sprinkle:nth-child(106) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: -90px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 28%; /* Random horizontal position */
+}
+.sprinkle:nth-child(107) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 9deg; /* Rotate by 5 degrees */
+    top: -88px; /* Random vertical position */
+    left: 30%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(108) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -23deg; /* Rotate by -25 degrees */
+    top: -90px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 20%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(109) {
+    background-color: #19b919; /* Red */
+    --rotate: 20deg; /* Rotate by 20 degrees */
+    top: -90px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 21%; /* Random horizontal position */
+}
+.sprinkle:nth-child(110) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 17deg; /* Rotate by 15 degrees */
+    top: -97px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 79%; /* Random horizontal position */
+}
+.sprinkle:nth-child(111) {
+    background-color: #19b919; /* Red */
+    --rotate: -25deg; /* Rotate by 20 degrees */
+    top: -97px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 75%; /* Random horizontal position */
+}
+.sprinkle:nth-child(112) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 25deg; /* Rotate by -25 degrees */
+    top: -96px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 73%; /* Random horizontal position */
+}
+.sprinkle:nth-child(113) {
+    background-color: #0000ff; /* Blue */
+    --rotate: -12deg; /* Rotate by 15 degrees */
+    top: -100px; /* Random vertical position */
+    left: 77%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(114) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -9deg; /* Rotate by 5 degrees */
+    top: -120px; /* Random vertical position */
+    left: 76%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(115) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 23deg; /* Rotate by -25 degrees */
+    top: -94px; /* Random vertical position */
+    left: 44%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+
+.sprinkle:nth-child(116) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 20deg; /* Rotate by -25 degrees */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    top: -100px; /* Random vertical position */
+    left: 51%; /* Random horizontal position */
+}
+.sprinkle:nth-child(117) {
+    background-color: #ff0000; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -98px;  /* Random vertical position */
+    left: 52%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(118) {
+    background-color: #19b919; /* Red */
+    --rotate: -20deg; /* Rotate by 20 degrees */
+    top: -120px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 80%; /* Random horizontal position */
+}
+.sprinkle:nth-child(119) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: 25deg; /* Rotate by -25 degrees */
+    top: -126px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 83%; /* Random horizontal position */
+}
+.sprinkle:nth-child(120) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 34deg; /* Rotate by 15 degrees */
+    top: -130px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 80%; /* Random horizontal position */
+}
+.sprinkle:nth-child(121) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 14deg; /* Rotate by 5 degrees */
+    top: -120px; /* Random vertical position */
+    left: 75%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(122) {
+    background-color: #8b00ff; /* Indigo */
+    --rotate: -23deg; /* Rotate by -25 degrees */
+    top: -126px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 76%; /* Random horizontal position */
+}
+.sprinkle:nth-child(123) {
+    background-color: #19b919; /* Red */
+    --rotate: 50deg; /* Rotate by 20 degrees */
+    top: -130px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 73%; /* Random horizontal position */
+}
+.sprinkle:nth-child(124) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 25deg; /* Rotate by 15 degrees */
+    top: -140px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 23%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(125) {
+    background-color: #ff0000; /* Red */
+    --rotate: 25deg; /* Rotate by 20 degrees */
+    top: -140px;  /* Random vertical position */
+    left: 75%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(126) {
+    background-color: #e29701; /* Yellow */
+    --rotate: 40deg; /* Rotate by 5 degrees */
+    top: -140px; /* Random vertical position */
+    left: 20%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}.sprinkle:nth-child(127) {
+    background-color: #ff0000; /* Red */
+    --rotate: -29deg; /* Rotate by 20 degrees */
+    top: -139px;  /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 23%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(128) {
+    background-color: #19b919; /* Green */
+    --rotate: 38deg; /* Rotate by -30 degrees */
+    top: -137px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 25%; /* Random horizontal position */
+}
+
+.sprinkle:nth-child(129) {
+    background-color: #0000ff; /* Blue */
+    --rotate: 20deg; /* Rotate by 15 degrees */
+    top: -139px; /* Random vertical position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    left: 14%; /* Random horizontal position */
+}
+.sprinkle:nth-child(130) {
+    background-color: #e29701; /* Yellow */
+    --rotate: -22deg; /* Rotate by 5 degrees */
+    top: -145px; /* Random vertical position */
+    left: 14%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+}
+.sprinkle:nth-child(131) {
+    background-color: #8b00ff; /* Yellow */
+    --rotate: 40deg; /* Rotate by 5 degrees */
+    top: -140px; /* Random vertical position */
+    left: 19%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+.sprinkle:nth-child(132) {
+    background-color: #ff0000; /* Red */
+    --rotate: 29deg; /* Rotate by 20 degrees */
+    top: -149px;  /* Random vertical position */
+    left: 17%; /* Random horizontal position */
+    z-index: 2; /* Ensure the sprinkles are on top of the icing */
+    
+}
+
+.tier3 {
+    width: 150px;
+    height: 130px;
+    z-index: 4; /* Top tier */
+    margin-top: -10px; /* Overlap properly with tier2 */
+}
+/* Confetti container */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+/* Individual confetti pieces */
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0;
+    opacity: 0;
+    animation: confetti-fall 4s forwards;
+    animation-timing-function: ease-in-out;
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+.candle {
+    position: relative;
+    width: 10px;
+    height: 50px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    animation: flicker 1.2s infinite;
+}
+/* Styles for extinguished candles */
+.candle.extinguished::before {
+    background-color: transparent;
+    box-shadow: none;
+    animation: none;
+
+    content: "";
+    position: absolute;
+    top: -4px; /* Position the wick near the top of the candle */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px; /* Small line */
+    height: 6px; /* Make it about the size of a wick */
+    background-color: #333; 
+    
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+/* Message */
+.message {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 80px;
+}
+
+.message h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* Button styling */
+#blow-out-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#blow-out-button:hover {
+    background-color: #f4edec;
+}
